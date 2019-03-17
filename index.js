@@ -1,50 +1,54 @@
 var elements = document.getElementsByClassName('price')
 var prices = [] 
 
-for (let price of elements) { 
-    prices.push(parseInt(price.innerText.split('$')[1]) )  
-}
-
-function addItem() { 
+function updateList() {
     let newVal = document.getElementById('amount-input')
-    let name = document.getElementById('name-input').value;
-    let list = document.getElementById('expense-list');
-    let total = document.getElementById('total');
+    let value = newVal.value
+    if (parseInt(value)) {
+        prices.push(parseInt(value)) 
 
-    let newPrice = prices.reduce((acc, curr) => acc + curr)
- 
-    let newExpenseFull = document.createElement('li');
-    let newItemPriceFlex = document.createElement('div');
-    let img = document.createElement('img');
-    let item = document.createElement('h1');
-    let price = document.createElement('h1')
+        let name = document.getElementById('name-input').value;
+        let list = document.getElementById('expense-list');
+        let total = document.getElementById('total');
 
-    item.innerText = name
-    total.innerText = `$${newPrice}`
-    value = newVal.value
-    price.innerText = `$${value}`
+        let newExpenseFull = document.createElement('li');
+        let newItemPriceFlex = document.createElement('div');
+        let img = document.createElement('img');
 
-    parseInt(value) ? prices.push(parseInt(value)) : alert('Please enter a valid price')
+        let item = document.createElement('h1');
+        item.innerText = name
 
-    img.setAttribute('class', 'delete-button')
-    img.setAttribute('src', './assets/trash_can.svg')
-    item.setAttribute('class', 'item')
-    price.setAttribute('class', 'price')
-    newItemPriceFlex.setAttribute('class', 'item-price-flex')
-    newExpenseFull.setAttribute('class', 'expense-full')
+        let price = document.createElement('h1')
+        price.innerText = `$${value}`
 
-    newItemPriceFlex.appendChild(item)
-    newItemPriceFlex.appendChild(price)
-    newExpenseFull.appendChild(newItemPriceFlex)
-    newExpenseFull.appendChild(img)
-    list.appendChild(newExpenseFull)
+        let newPrice = prices.reduce((acc, curr) => acc + curr)
+        total.innerText = `$${newPrice}`
 
-    newVal.value = ''
-    name.value = ''
+        img.setAttribute('class', 'delete-button')
+        img.setAttribute('src', './assets/trash_can.svg')
+        item.setAttribute('class', 'item')
+        price.setAttribute('class', 'price')
+        newItemPriceFlex.setAttribute('class', 'item-price-flex')
+        newExpenseFull.setAttribute('class', 'expense-full')
+
+        newItemPriceFlex.appendChild(item)
+        newItemPriceFlex.appendChild(price)
+        newExpenseFull.appendChild(newItemPriceFlex)
+        newExpenseFull.appendChild(img)
+        list.appendChild(newExpenseFull)
+
+        img.addEventListener('click', function () {
+             let thisPrice = parseInt(item.parentNode.childNodes[1].innerText.split('$')[1]);
+             prices.splice(prices.indexOf(thisPrice), 1)
+             total.innerText = `$${prices.reduce((acc, curr) => acc + curr, 0)}`
+             item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode)      
+        })
+
+        newVal.value = ''
+    } else { 
+        alert('That is not a valid price')
+        newVal.value = ''
+    }
 }
 
-var buttons = document.getElementsByClassName('delete-button')
 
-for (let i = 0; i < buttons.length; i++) { 
-    console.dir(buttons[i])
-}

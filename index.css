@@ -4,8 +4,8 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    width: 99vw;
+    height: 99vh;
 }
 
 #top-nav {
@@ -29,28 +29,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 20px;
 }
 
 main {
     width: 90%;
     height: 500px;
-    border: 1px solid red;
     margin: auto;
     display:flex;
     justify-content: space-around;
-
 }
 
 #monthly-expenses {
     width: 30%;
     background-color: #EFE8E1;
-    border-radius: 10px;
-    
+    border-radius: 10px;   
 }
 
-#monthly-expenses, #expense-list {
-    margin: 0px;
-}
 
 .item-price-flex {
     min-width: 250px;
@@ -66,8 +61,7 @@ main {
 
 #monthly-expenses-text {
     font-family: 'Righteous';
-    margin-bottom: 20px;
-    margin: 10px;
+    margin: 10px 10px 20px 10px;
 }
 
 .price {
@@ -83,11 +77,8 @@ main {
 
 
 #add-item {
-    width: 20%;
-    height: 300px;
-    border: 1px solid red;
-    float: right;
-    clear: both;
+    width: 40%;
+    height: 310px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -96,21 +87,23 @@ main {
     padding-bottom: 40px;
 }
 
+#add-bill-text {
+    font-family: 'Righteous'
+}
+
 #add-bill-text, .input-field, #button {
     margin: 25px;
 }
 
 .input {
-    
-    width: 60%;
-    height: 20px;
+    width: 65%;
+    height: 30px;
 }
 
 .input-field{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* align-items:center; */
 }
 
 

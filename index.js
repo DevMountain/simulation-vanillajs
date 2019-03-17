@@ -8,19 +8,21 @@ for (let price of elements) {
 function addItem() { 
     let newVal = document.getElementById('amount-input')
     let name = document.getElementById('name-input').value;
-    let total = document.getElementById('total');
-    let newPrice = prices.reduce((acc, curr) => acc + curr)
     let list = document.getElementById('expense-list');
+    let total = document.getElementById('total');
+
+    let newPrice = prices.reduce((acc, curr) => acc + curr)
+ 
     let newExpenseFull = document.createElement('li');
     let newItemPriceFlex = document.createElement('div');
     let img = document.createElement('img');
     let item = document.createElement('h1');
     let price = document.createElement('h1')
 
-    value = newVal.value
     item.innerText = name
     total.innerText = `$${newPrice}`
     price.innerText = `$${value}`
+    value = newVal.value
 
     parseInt(value) ? prices.push(parseInt(value)) : alert('Please enter a valid price')
 
@@ -40,3 +42,4 @@ function addItem() {
     newVal.value = ''
     name.value = ''
 }
+

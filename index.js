@@ -21,8 +21,8 @@ function addItem() {
 
     item.innerText = name
     total.innerText = `$${newPrice}`
-    price.innerText = `$${value}`
     value = newVal.value
+    price.innerText = `$${value}`
 
     parseInt(value) ? prices.push(parseInt(value)) : alert('Please enter a valid price')
 

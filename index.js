@@ -43,3 +43,8 @@ function addItem() {
     name.value = ''
 }
 
+var buttons = document.getElementsByClassName('delete-button')
+
+for (let i = 0; i < buttons.length; i++) { 
+    console.dir(buttons[i])
+}

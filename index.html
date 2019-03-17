@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet"> 
+    <link rel = 'stylesheet' href = './index.css' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header id = 'top-nav'>
+        <div id = 'header-left'>
+            <img id = 'piggy' src = './assets/piggy_bank.svg' />
+            <h1>Budget Builder</h1>
+        </div>
+        <div id = 'header-right'>
+            <h1>Budget Total: </h1>
+            <h1 id = 'total'> $300</h1>
+        </div>
+    </header>
+
+    <main>
+        <div id = 'monthly-expenses'>
+            <h1 id = 'monthly-expenses-text'>Monthly Expenses</h1>
+            <ul id = 'expense-list'>
+                <li class = 'expense-full'>
+                    <div class = 'item-price-flex'>
+                        <h1 class = 'item'>Groceries</h1>
+                        <h1 class = 'price'>$100</h1>
+                    </div>
+                    <img class = 'delete-button' src = './assets/trash_can.svg' />
+                </li>
+                <li class = 'expense-full'>
+                    <div class = 'item-price-flex'>
+                        <h1 class = 'item'>Utilities</h1>
+                        <h1 class = 'price'>$200</h1>
+                    </div>
+                    <img class = 'delete-button' src = './assets/trash_can.svg' />
+                </li>
+            </ul>
+        </div>
+        <div id = 'add-item'>
+            <h1 id = 'add-bill-text'>Add Bill</h1>
+            <div class = 'input-field' id ='name-input-field'>
+                <h2>Name</h2>
+                <input type = 'text' class = 'input' id = 'name-input'/>
+            </div>
+            <div class = 'input-field' id ='amount-input-field'>
+                <h2>Amount</h2>
+                <input type = 'text' class = 'input' placeholder = 'name' id = 'amount-input'/>
+            </div>
+            <button id  = 'button' class = 'submit' onclick = 'addItem()'>Add</button>
+        </div> 
+    </main> 
+ <script src = 'index.js'>
+</script>
+</body>
+</html>

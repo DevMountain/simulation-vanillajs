@@ -45,6 +45,7 @@ function updateList() {
         })
 
         newVal.value = ''
+        document.getElementById('name-input').value = ''
     } else { 
         alert('That is not a valid price')
         newVal.value = ''

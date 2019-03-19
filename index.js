@@ -38,7 +38,7 @@ function updateList() {
         list.appendChild(newExpenseFull)
 
         img.addEventListener('click', function () {
-             let thisPrice = parseInt(item.parentNode.childNodes[1].innerText.split('$')[1]);
+             let thisPrice = parseInt(item.parentNode.childNodes[1].innerText.split('$')[1])
              prices.splice(prices.indexOf(thisPrice), 1)
              total.innerText = `$${prices.reduce((acc, curr) => acc + curr, 0)}`
              item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode)      
